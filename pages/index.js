@@ -94,7 +94,7 @@ export default function App() {
 		{
 			value: "AC",
 			text: "clear",
-			key: "Escape"
+			key: "Delete"
 		},
 		{
 			value: "<<",
@@ -243,15 +243,12 @@ export default function App() {
 		return () => {
 			document.removeEventListener("keydown", handleKeyDown);
 		}
-	}, []);
+	});
 
 	return (
 		<article id="wrapper">
 			<Head>
 				<title>Calculator</title>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-				<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
 			</Head>
 			<main id="calculator">
 				<h1 id="title">Calculator</h1>
@@ -259,10 +256,10 @@ export default function App() {
 				<section id="expression">{expression.join(" ")}</section>
 				<section id="display">{input !== "" ? formatAccounting(input) :
 					result === null ? null : formatAccounting(result.toPrecision(10).replace(/\.0+$|0+$/, ""))}</section>
-				{keys.map((cv, idx) => <div key={idx} id={cv.text} class="pads" onClick={handleClick} onMouseDown={handleMouseDown} onMouseOut={handleMouseOut}>{cv.value}</div>)}
+				{keys.map((cv, idx) => <div key={idx} id={cv.text} className="pads" onClick={handleClick} onMouseDown={handleMouseDown} onMouseOut={handleMouseOut}>{cv.value}</div>)}
 			</main>
 			<footer>
-				<p class="copyright">© {new Date().getFullYear()} Firo Kong</p>
+				<p className="copyright">© {new Date().getFullYear()} Firo Kong</p>
 			</footer>
 		</article>
 	)
