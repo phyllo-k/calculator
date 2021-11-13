@@ -89,7 +89,7 @@ export default function App() {
 		{
 			value: "=",
 			text: "equals",
-			key: "="
+			key: "Enter"
 		},
 		{
 			value: "AC",
