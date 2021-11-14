@@ -52,6 +52,7 @@ article {
     .pads {
         background: #343434;
         border: 2px solid #000;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -59,7 +60,6 @@ article {
     .pads:hover {
         transform: scale(0.97);
         color: #3d3;
-        cursor: pointer;
     }
 
     .btn {
