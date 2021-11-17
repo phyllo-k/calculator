@@ -116,7 +116,7 @@ export default function App() {
 		event.target.style.opacity = "1";
 	};
 
-	const handleClick = event => {cd 
+	const handleClick = event => {
 		clickedStyle(event);
 		const text = event.target.innerText;
 
