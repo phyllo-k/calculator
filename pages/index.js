@@ -135,7 +135,7 @@ export default function App() {
 
 		// Inputs
 		if (/[\d\.]/.test(text)) {
-			if (expression.at(-1) === "=") { // Reset expression for new operation.
+			if (expression[expression.length - 1] === "=") { // Reset expression for new operation.
 				setExpression([]);
 				setResult(null);
 			}
@@ -256,7 +256,7 @@ export default function App() {
 				<section id="expression">{expression.join(" ")}</section>
 				<section id="display">{input !== "" ? formatAccounting(input) :
 					result === null ? null : formatAccounting(result.toPrecision(10).replace(/\.0+$|0+$/, ""))}</section>
-				{keys.map((cv, idx) => <div key={idx} id={cv.text} className="pads" onClick={handleClick} onTouchStart={handleClick} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}>{cv.value}</div>)}
+				{keys.map((cv, idx) => <div key={idx} id={cv.text} className="pads" onClick={handleClick} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}>{cv.value}</div>)}
 			</main>
 			<footer>
 				<p className="copyright">© {new Date().getFullYear()} Firo Kong</p>
